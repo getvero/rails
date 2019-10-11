@@ -10,7 +10,7 @@ end
 gemspec
 
 # We need a newish Rake since Active Job sets its test tasks' descriptions.
-gem 'rake', '>= 10.3'
+gem 'rake', '>= 10.3', '< 12.3'
 
 # This needs to be with require false as it is
 # loaded after loading the test library to
@@ -20,7 +20,12 @@ gem 'mocha', '~> 0.14', require: false
 gem 'rack-cache', '~> 1.2'
 gem 'jquery-rails', '~> 4.0'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'turbolinks'
+
+if RUBY_VERSION < "2.1"
+  gem 'turbolinks', '< 5.1'
+else
+  gem 'turbolinks'
+end
 
 gem 'sprockets', '~> 3.0.0.rc.1'
 gem 'execjs', '< 2.5'
@@ -46,7 +51,7 @@ group :doc do
 end
 
 # AS
-gem 'dalli', '>= 2.2.1'
+gem 'dalli', '< 2.7.7'
 
 # ActiveJob
 group :job do
@@ -55,7 +60,7 @@ group :job do
   gem 'sidekiq', RUBY_VERSION < '2.2' ? '< 5' : nil, require: false
   gem 'sucker_punch', '< 2.0', require: false
   gem 'delayed_job', require: false
-  gem 'queue_classic', '> 0.3.2', require: false, platforms: :ruby
+  gem 'queue_classic', '>= 3.1.0', require: false, platforms: :ruby
   gem 'sneakers', '< 2.0.0', require: false
   gem 'que', require: false
   gem 'backburner', require: false
@@ -99,8 +104,8 @@ platforms :ruby do
   gem 'sqlite3', '~> 1.3.6'
 
   group :db do
-    gem 'pg', '>= 0.15.0'
-    gem 'mysql2', '>= 0.4.0'
+    gem 'pg', '>= 0.15.0', '< 0.19.0'
+    gem 'mysql2', RUBY_VERSION < '2.0' ? '~> 0.4.0' : '>= 0.4.0'
   end
 end
 
