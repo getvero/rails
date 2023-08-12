@@ -51,7 +51,7 @@ group :doc do
 end
 
 # AS
-gem 'dalli', '< 2.7.7'
+gem 'dalli', '< 3.2.4'
 
 # ActiveJob
 group :job do
