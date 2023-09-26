@@ -18,7 +18,7 @@ gem 'rake', '>= 10.3', '< 12.3'
 gem 'mocha', '~> 0.14', require: false
 
 gem 'rack-cache', '~> 1.2'
-gem 'jquery-rails', '~> 4.0'
+gem 'jquery-rails', '~> 4.6'
 gem 'coffee-rails', '~> 4.1.0'
 
 if RUBY_VERSION < "2.1"
