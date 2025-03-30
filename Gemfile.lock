@@ -108,7 +108,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     connection_pool (2.2.1)
-    crass (1.0.4)
+    crass (1.0.6)
     dalli (2.7.6)
     dante (0.2.0)
     delayed_job (4.1.4)
@@ -134,7 +134,7 @@ GEM
     kindlerb (0.1.1)
       mustache
       nokogiri
-    loofah (2.2.3)
+    loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
